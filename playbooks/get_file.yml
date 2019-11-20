@@ -6,3 +6,7 @@
     win_file:
       path: C:\Temp\test.conf
       state: file
+    register: out
+  - name: Showing the statistics
+    debug:
+      var: out

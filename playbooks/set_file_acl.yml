@@ -10,3 +10,7 @@
       type: allow
       state: present
       inherit: ContainerInherit, ObjectInherit
+  - name: Update user_one as owner of test.conf
+    win_owner:
+      path: C:\Temp\test.conf
+      user: user_one

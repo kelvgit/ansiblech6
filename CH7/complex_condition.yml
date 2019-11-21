@@ -12,4 +12,4 @@
       state: present
       loop: "{{my_package}}"
     when:
-    - ansible_facts.distribution == "Microsoft Windows Server 2016 Core" and ansible_facts.architecture. == "64-bit"
+    - ansible_facts.distribution == "Microsoft Windows Server 2016 Core" and ansible_facts.architecture == "64-bit"

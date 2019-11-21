@@ -6,6 +6,6 @@
   - name: Get services
     win_shell: |
       Get-Service | fl Name,DisplayName,Status
-    register: output
-  - debug:
-      var: output
+  #   register: output
+  # - debug:
+  #     var: output

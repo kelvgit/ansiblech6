@@ -4,9 +4,8 @@
   gather_facts: false
   tasks:
   - name: Get services
-    win_command:
-      name: powershell.exe
-      args: get-service
+    win_shell: |
+      Get-Service
     register: output
   - debug:
       var: output

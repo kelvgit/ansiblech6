@@ -9,8 +9,12 @@
     notify:
     - reboot server
   - name: Failing the task
-    fail:
+    debug:
       msg: Test failing the task
+    failed_when: true
+  - name: This is another task
+    debug:
+      msg: final task
   handlers:
   - name: reboot server
     win_reboot:

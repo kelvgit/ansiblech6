@@ -2,7 +2,7 @@
 - name: Testing Handlers
   hosts: all
   tasks:
-  - name: Install VLC
+  - name: Install winrar
     win_chocolatey:
       name: winrar
       state: present

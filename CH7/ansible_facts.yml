@@ -3,5 +3,4 @@
   hosts: all
   tasks:
   - name: Get ansible facts
-    debug:
-      var: "{{ansible_facts}}"
+    debug: var=ansible_facts

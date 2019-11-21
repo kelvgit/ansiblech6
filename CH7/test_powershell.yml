@@ -5,7 +5,7 @@
   tasks:
   - name: Get services
     win_shell: |
-      Get-Service
+      Get-Service | fl Name,DisplayName,Status
     register: output
   - debug:
       var: output

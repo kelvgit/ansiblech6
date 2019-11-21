@@ -1,21 +1,22 @@
 ---
-- name: Testing Handlers
+- name: Testing block and rescue
   hosts: all
-  force_handlers: true
   tasks:
-  - name: Install flashplayer
-    win_chocolatey:
-      name: flashplayerppapi
-      state: present
-    notify:
-    - reboot server
-  - name: Failing the task
-    debug:
-      msg: Test failing the task
-    failed_when: true
+  - name: Block 1
+    block:
+    - name: Install flashplayer
+      win_chocolatey:
+        name: flashplayerpp
+        state: present
+    rescue:
+    - name: Rollback flashplayer
+      win_chocolatey:
+        name: flashplayerppapi
+        state: absent
+    always:
+    - name: I am god
+      debug:
+        msg: I will run no matter what.
   - name: This is another task
     debug:
       msg: final task
-  handlers:
-  - name: reboot server
-    win_reboot:

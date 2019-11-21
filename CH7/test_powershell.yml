@@ -1,12 +1,12 @@
 ---
 - name: Testing Powershell
   hosts: all
+  gather_facts: false
   tasks:
   - name: Get services
     win_command:
-      name: "{{ item }}"
-      state: present
-    loop:
-    - jre8
-    - javaruntime-preventasktoolbar
-    - dropbox
+      name: powershell.exe
+      args: get-service
+    register: output
+  - debug:
+      var: output
